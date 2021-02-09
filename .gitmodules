@@ -1,0 +1,3 @@
+[submodule "cypress-tutorial-build-todo"]
+	path = cypress-tutorial-build-todo
+	url = git@github.com:dijkstraj/cypress-tutorial-build-todo.git
