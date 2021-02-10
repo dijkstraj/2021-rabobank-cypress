@@ -229,3 +229,43 @@
       ```
     - add check for filter "all"
 
+# 7-cucumber
+
+- `$ gcrh 7-cucumber`
+- WHAT: use Cucumber to write the first test
+- open _cypress/integration/InputForm.feature_
+- open _cypress/integration/InputForm/input-form.steps.js_
+- show runner
+- WHAT: ignore \*.js tests (i.e. only use features)
+- open cypress.json
+- add `"ignoreTestFiles": "*.js"`
+- show runner
+- WHAT: implement the tests again
+- open _cypress/integration/InputForm.feature_
+- ```
+  Then the input has focus
+  ```
+- open _cypress/integration/InputForm/input-form.steps.js)
+- ```
+  Then(`the input has focus`, () => {
+    cy.get('.new-todo').should('have.focus')
+  })
+  ```
+- show runner
+- WHAT: add the typing scenario
+- open _cypress/integration/InputForm.feature_
+- ```
+  Scenario: Type something
+    Given I am on the home page
+    When I type "some words" in the input
+    Then the input shows "some words"
+  ```
+- open _cypress/integration/InputForm/input-form.steps.js
+- ```
+  When(`I type {string} in the input`, (typed) => {
+    cy.get('.new-todo').type(typed)
+  })
+  Then(`the input shows {string}`, (showing) => {
+    cy.get('.new-todo').should('have.value', showing)
+  })
+  ```
