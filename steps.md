@@ -1,11 +1,13 @@
-# 00_prep
+# 0-prep
 
+- gco demo
+- gcrh 1-inputs
 - start application: npm run dev
 - start cypress: npx cypress open
 
-# 01_setup
+# 1-inputs
 
-- gwco 01_setup
+- gcrh 1-inputs
 - WHAT: check input has focus on load
 - open cypress/integration/input-form.spec.js
 - cy.visit('http://localhost:3030')
@@ -21,9 +23,9 @@
 - refactor: beforeEach()
 - refactor: set "baseUrl" in cypress.json and navigate to '/'
 
-# 02_inputs
+# 2-form-submission
 
-- gcrh 02_inputs
+- gcrh 2-form-submission
 - open src/components/TodoApp.js
 - show importance of should('have.value') by removing handleNewTodoChange()
 - WHAT: check create new todo items
@@ -52,9 +54,9 @@
 - cy.get('.error').should('be.visible')
 - refactor: cy.server() to beforeEach() within context
 
-# 03_form_sub
+# 3-custom-command
 
-- gcrh 03_form_sub
+- gcrh 3-custom-command
 - WHAT: check startup
 - create file app-init.spec.js
 - describe('App initialization', () => {})
@@ -103,9 +105,9 @@
 - see that list checks fail
 - add seedData parameter to seedAndVisit command
 
-# 04_custom_cmd
+# 4-todo-items
 
-- gcrh 04_custom_cmd
+- gcrh 4-todo-items
 - WHAT: check item display and delete
 - create file list-items.spec.js
 - describe('List items', () => {})
@@ -132,9 +134,9 @@
     - cy.get('.todo-list li').as('list')
     - cy.get('@list').should('have.length', 3).and('not.contain', 'Milk')
 
-# 05_todo_items
+# 5-toggle-debug
 
-- gcrh 05_todo_items
+- gcrh 5-toggle-debug
 - check item toggle
     - open cypress/integration/list-items.spec.js
     - it.only('Marks an incomplete item complete', () => {})
@@ -157,9 +159,9 @@
     - replace splat codes to this.state.todos.map(t => t.id === data.id ? data : t)
     - remove targetIndex as well
 
-# 06_toggle_debug
+# 6-data-driven
 
-- gcrh 06_toggle_debug
+- gcrh 6-data-driven
 - WHAT: test todo/todos and filters in footer
 - create file footer.spec.js
 - describe('Footer', () => {})
