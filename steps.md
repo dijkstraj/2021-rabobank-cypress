@@ -245,7 +245,7 @@
 - ```
   Then the input has focus
   ```
-- open _cypress/integration/InputForm/input-form.steps.js)
+- open _cypress/integration/InputForm/input-form.steps.js_
 - ```
   Then(`the input has focus`, () => {
     cy.get('.new-todo').should('have.focus')
@@ -260,7 +260,7 @@
     When I type "some words" in the input
     Then the input shows "some words"
   ```
-- open _cypress/integration/InputForm/input-form.steps.js
+- open _cypress/integration/InputForm/input-form.steps.js_
 - ```
   When(`I type {string} in the input`, (typed) => {
     cy.get('.new-todo').type(typed)
